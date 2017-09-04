@@ -5,7 +5,7 @@ import javax.persistence.Entity
 @Entity
 class Socket : BaseEntity {
 
-    private var name: String
+    var name: String
 
     @Suppress("unused")
     constructor() {
