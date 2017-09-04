@@ -4,8 +4,10 @@ import javax.persistence.Entity
 
 @Entity
 class Socket : BaseEntity {
+
     private var name: String
 
+    @Suppress("unused")
     constructor() {
         this.name = ""
     }

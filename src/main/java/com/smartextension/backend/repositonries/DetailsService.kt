@@ -1,0 +1,28 @@
+package com.smartextension.backend.repositonries
+
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.security.core.authority.AuthorityUtils
+import org.springframework.security.core.userdetails.UserDetails
+import org.springframework.security.core.userdetails.UserDetailsService
+import org.springframework.security.core.userdetails.UsernameNotFoundException
+import org.springframework.stereotype.Component
+
+@Component
+open class DetailsService : UserDetailsService {
+
+    @Autowired
+    lateinit var userRepository: UserRepository
+
+    @Throws(UsernameNotFoundException::class)
+    override fun loadUserByUsername(username: String?): UserDetails {
+        username?.let {
+            val user = userRepository.findByUsername(it)
+            user?.let {
+                val roles = it.roles
+                return org.springframework.security.core.userdetails.User(
+                        it.username, it.password,
+                        AuthorityUtils.createAuthorityList(*roles))
+            } ?: let { throw UsernameNotFoundException("$username was not found") }
+        } ?: let { throw UsernameNotFoundException("$username was not found") }
+    }
+}
