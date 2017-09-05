@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30b747bc-976a-47fa-93b5-fcc3b55010a8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__postgresql_postgresql_9_1_901_1_jdbc4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/smartextension/backend/rest/Util.kt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/BackendJava_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/BackendJava_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/BackendJava_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/BackendJava_test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smartextension/backend/datalayer/DataBaseLoader.kt" afterPath="$PROJECT_DIR$/src/main/java/com/smartextension/backend/datalayer/DataBaseLoader.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smartextension/backend/datalayer/entities/User.kt" afterPath="$PROJECT_DIR$/src/main/java/com/smartextension/backend/datalayer/entities/User.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smartextension/backend/datalayer/repositories/ExtensionRepository.kt" afterPath="$PROJECT_DIR$/src/main/java/com/smartextension/backend/datalayer/repositories/ExtensionRepository.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -993,7 +980,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504625201050</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add data base (don't work)">
+      <created>1504640219877</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1504640219878</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1055,7 +1049,8 @@
     <MESSAGE value="Try to add rest controler" />
     <MESSAGE value="Fixed rest. Move Socket controller." />
     <MESSAGE value="add extension entity and repository for it." />
-    <option name="LAST_COMMIT_MESSAGE" value="add extension entity and repository for it." />
+    <MESSAGE value="add data base (don't work)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add data base (don't work)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
