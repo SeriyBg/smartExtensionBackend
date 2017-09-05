@@ -44,5 +44,4 @@ class DataBaseLoader @Autowired constructor(
 
         extensions.save(extensionList)
     }
-
 }

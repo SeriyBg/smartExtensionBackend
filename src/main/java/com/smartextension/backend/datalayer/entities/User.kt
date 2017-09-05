@@ -3,8 +3,10 @@ package com.smartextension.backend.datalayer.entities
 import com.fasterxml.jackson.annotation.JsonIgnore
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import javax.persistence.Entity
+import javax.persistence.Table
 
 @Entity
+@Table(name = "users")
 class User() : BaseEntity() {
 
     companion object {
