@@ -1,5 +1,6 @@
-package com.smartextension.backend.repositonries
+package com.smartextension.backend
 
+import com.smartextension.backend.datalayer.repositories.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.authority.AuthorityUtils
 import org.springframework.security.core.userdetails.UserDetails

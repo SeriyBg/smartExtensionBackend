@@ -1,6 +1,6 @@
-package com.smartextension.backend.repositonries
+package com.smartextension.backend
 
-import com.smartextension.backend.entities.User
+import com.smartextension.backend.datalayer.entities.User
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component
 @EnableWebSecurity
 open class WebSecurityConfiguration : WebSecurityConfigurerAdapter() {
 
+    @Suppress("MemberVisibilityCanPrivate")
     @Autowired
     lateinit var detailsService: DetailsService
 

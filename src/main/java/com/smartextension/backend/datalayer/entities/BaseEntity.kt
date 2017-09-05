@@ -1,4 +1,4 @@
-package com.smartextension.backend.entities
+package com.smartextension.backend.datalayer.entities
 
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType

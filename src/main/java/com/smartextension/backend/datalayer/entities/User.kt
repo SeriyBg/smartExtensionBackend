@@ -1,4 +1,4 @@
-package com.smartextension.backend.entities
+package com.smartextension.backend.datalayer.entities
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
