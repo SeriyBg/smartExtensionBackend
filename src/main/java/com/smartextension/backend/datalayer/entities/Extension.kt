@@ -5,15 +5,4 @@ import javax.persistence.Table
 
 @Entity
 @Table(name = "extension")
-class Extension : BaseEntity {
-
-    var name = ""
-
-    @Suppress("unused")
-    constructor()
-
-    constructor(name: String) : super() {
-        this.name = name
-    }
-
-}
+class Extension(var name: String = "") : BaseEntity()

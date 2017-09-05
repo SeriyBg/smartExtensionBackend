@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository
 
 interface UserRepository : CrudRepository<User, Long> {
 
-    fun findByUsername(userName : String) : User?
+    fun findByUsername(userName: String): User?
 
 }

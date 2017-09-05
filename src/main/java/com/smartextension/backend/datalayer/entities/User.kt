@@ -21,14 +21,15 @@ class User() : BaseEntity() {
 
     @JsonIgnore
     var password = ""
-    set(value) {
-        field = PASSWORD_ENCODER.encode(value)
-    }
+        set(value) {
+            field = PASSWORD_ENCODER.encode(value)
+        }
 
     @JsonIgnore
-    lateinit var roles : Array<String>
+    lateinit var roles: Array<String>
 
-    constructor(firstName : String, lastName : String, username : String, password : String, roles : Array<String>) : this() {
+    constructor(firstName: String, lastName: String, username: String, password: String,
+                roles: Array<String>) : this() {
         this.firstName = firstName
         this.lastName = lastName
         this.username = username
