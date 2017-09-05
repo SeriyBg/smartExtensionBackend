@@ -1,7 +1,9 @@
 package com.smartextension.backend.datalayer
 
+import com.smartextension.backend.datalayer.entities.Extension
 import com.smartextension.backend.datalayer.entities.Socket
 import com.smartextension.backend.datalayer.entities.User
+import com.smartextension.backend.datalayer.repositories.ExtensionRepository
 import com.smartextension.backend.datalayer.repositories.SocketRepository
 import com.smartextension.backend.datalayer.repositories.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Component
 @Component
 class DataBaseLoader @Autowired constructor(
         @Suppress("MemberVisibilityCanPrivate") var sockets: SocketRepository,
+        @Suppress("MemberVisibilityCanPrivate") var extensions: ExtensionRepository,
         @Suppress("MemberVisibilityCanPrivate") var users: UserRepository) : ApplicationRunner {
 
     override fun run(args: ApplicationArguments?) {
@@ -32,6 +35,14 @@ class DataBaseLoader @Autowired constructor(
                         arrayOf("ROLE_USER", "ROLE_ADMIN"))
         )
         users.save(students)
+
+
+        val extensionList = mutableListOf(
+                Extension("extension 1"),
+                Extension("extension 2"),
+                Extension("extension 3"))
+
+        extensions.save(extensionList)
     }
 
 }

@@ -1,18 +1,12 @@
 package com.smartextension.backend.datalayer.entities
 
+import javax.persistence.Column
 import javax.persistence.Entity
+import javax.persistence.Table
 
 @Entity
-class Socket : BaseEntity {
+@Table(name = "socket")
+class Socket constructor(var name: String = "", @Column(
+        name = "extensionId") var extentionId: Long = 0.toLong()) : BaseEntity() {
 
-    var name: String
-
-    @Suppress("unused")
-    constructor() {
-        this.name = ""
-    }
-
-    constructor(name: String) : super() {
-        this.name = name
-    }
 }
