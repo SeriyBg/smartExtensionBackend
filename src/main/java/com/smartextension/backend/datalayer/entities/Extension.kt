@@ -1,8 +1,10 @@
 package com.smartextension.backend.datalayer.entities
 
-import javax.persistence.Entity
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name = "extension")
-class Extension(var name: String = "") : BaseEntity()
+class Extension(@Id
+                @Column(name = "id")
+                @GeneratedValue(strategy = GenerationType.AUTO) val id: Long = 0,
+                var name: String = "")

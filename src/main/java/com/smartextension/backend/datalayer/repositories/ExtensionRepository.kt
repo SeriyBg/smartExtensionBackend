@@ -1,6 +1,6 @@
 package com.smartextension.backend.datalayer.repositories
 
 import com.smartextension.backend.datalayer.entities.Extension
-import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.repository.CrudRepository
 
-interface ExtensionRepository : JpaRepository<Extension, Long>
+interface ExtensionRepository : CrudRepository<Extension, Long>

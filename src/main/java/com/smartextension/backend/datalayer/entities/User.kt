@@ -2,38 +2,22 @@ package com.smartextension.backend.datalayer.entities
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
-import javax.persistence.Entity
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name = "users")
-class User() : BaseEntity() {
+class User constructor(
+        @Id @GeneratedValue(strategy = GenerationType.AUTO) @Column(name = "id") var id: Long = 0,
+        @Column(name = "username") var username: String = "",
+        @JsonIgnore @Column(name = "password") var password: String = "",
+        @JsonIgnore @Column(name = "role") var role: String = "") {
 
     companion object {
         val PASSWORD_ENCODER = BCryptPasswordEncoder()
     }
 
-    var firstName = ""
-
-    var lastName = ""
-
-    var username = ""
-
-    @JsonIgnore
-    var password = ""
-        set(value) {
-            field = PASSWORD_ENCODER.encode(value)
-        }
-
-    @JsonIgnore
-    lateinit var roles: Array<String>
-
-    constructor(firstName: String, lastName: String, username: String, password: String,
-                roles: Array<String>) : this() {
-        this.firstName = firstName
-        this.lastName = lastName
-        this.username = username
-        this.password = password
-        this.roles = roles
+    fun setNewPassword(pass: String) {
+        this.password = PASSWORD_ENCODER.encode(pass)
     }
+
 }

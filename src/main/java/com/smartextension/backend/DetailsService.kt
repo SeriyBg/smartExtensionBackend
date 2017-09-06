@@ -19,10 +19,9 @@ open class DetailsService : UserDetailsService {
         username?.let {
             val user = userRepository.findByUsername(it)
             user?.let {
-                val roles = it.roles
                 return org.springframework.security.core.userdetails.User(
                         it.username, it.password,
-                        AuthorityUtils.createAuthorityList(*roles))
+                        AuthorityUtils.createAuthorityList(it.role))
             } ?: let { throw UsernameNotFoundException("$username was not found") }
         } ?: let { throw UsernameNotFoundException("$username was not found") }
     }
