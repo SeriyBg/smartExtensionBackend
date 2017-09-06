@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping(value = "/extensions")
-class ExtensionControler {
+class ExtensionController {
 
     @Autowired
     lateinit var extensionRepository: ExtensionRepository
