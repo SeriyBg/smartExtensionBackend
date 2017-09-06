@@ -8,15 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.security.core.context.SecurityContextHolder
+import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
 
 
-
 @RestController
 @RequestMapping(value = "/sockets")
-open class SocketControler {
+open class SocketController {
 
     @Suppress("MemberVisibilityCanPrivate")
     @Autowired
@@ -35,20 +35,20 @@ open class SocketControler {
         return ArrayList<Socket>(socketRepository.findAll().toList())
     }
 
-    @RequestMapping(method = arrayOf(RequestMethod.POST))
+    @PostMapping
     fun addSocket(name: String, extensionId: Long): ResponseEntity<*> {
         if (name.isEmpty()) {
             return fieldCannotBeEmptyResponse("Name")
         }
-        if (extensionRepository.findOne(extensionId) == null) {
-            return ResponseEntity("Not found extension with id : $extensionId",
-                    HttpStatus.NOT_FOUND)
-        }
+        val extension = extensionRepository.findOne(extensionId) ?: return ResponseEntity(
+                "Not found extension with id : $extensionId",
+                HttpStatus.NOT_FOUND)
 
         val auth = SecurityContextHolder.getContext().authentication
         val user = userRepository.findByUsername(auth.name)
+
         user?.let {
-            val socket = Socket(name = name, extensionId = extensionId, ownerId = it.id)
+            val socket = Socket(name = name, extension = extension, ownerId = it.id)
             socketRepository.save(socket)
             return ResponseEntity("Socket added", HttpStatus.CREATED)
         } ?: let {
