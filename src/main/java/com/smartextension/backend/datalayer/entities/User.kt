@@ -1,23 +1,60 @@
 package com.smartextension.backend.datalayer.entities
 
-import com.fasterxml.jackson.annotation.JsonIgnore
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
+import org.springframework.security.core.GrantedAuthority
+import org.springframework.security.core.userdetails.UserDetails
+import java.util.*
 import javax.persistence.*
 
 @Entity
 @Table(name = "users")
-class User constructor(
-        @Id @GeneratedValue(strategy = GenerationType.AUTO) @Column(name = "id") var id: Long = 0,
-        @Column(name = "username") var username: String = "",
-        @JsonIgnore @Column(name = "password") var password: String = "",
-        @JsonIgnore @Column(name = "role") var role: String = "") {
+class User : UserDetails {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id", nullable = false, updatable = false)
+    val id: Long? = null
+
+    @Column(name = "username", nullable = false, unique = true)
+    private val username: String? = null
+
+    @Column(name = "password", nullable = false)
+    private val password: String? = null
+
+    @Column(name = "enabled", nullable = false)
+    private val enabled: Boolean = false
+
+    override fun getAuthorities(): Collection<GrantedAuthority> {
+        return ArrayList()
+    }
+
+    override fun isAccountNonExpired(): Boolean {
+        return true
+    }
+
+    override fun isAccountNonLocked(): Boolean {
+        // we never lock accounts
+        return true
+    }
+
+    override fun isCredentialsNonExpired(): Boolean {
+        // credentials never expire
+        return true
+    }
+
+    override fun isEnabled(): Boolean {
+        return enabled
+    }
+
+    override fun getPassword(): String? {
+        return password
+    }
+
+    override fun getUsername(): String? {
+        return username
+    }
 
     companion object {
-        val PASSWORD_ENCODER = BCryptPasswordEncoder()
-    }
 
-    fun setNewPassword(pass: String) {
-        this.password = PASSWORD_ENCODER.encode(pass)
+        internal val serialVersionUID = 1L
     }
-
 }

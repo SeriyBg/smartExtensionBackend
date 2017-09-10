@@ -45,10 +45,10 @@ open class SocketController {
                 HttpStatus.NOT_FOUND)
 
         val auth = SecurityContextHolder.getContext().authentication
-        val user = userRepository.findByUsername(auth.name)
+        val user = userRepository.findOneByUsername(auth.name)
 
-        user?.let {
-            val socket = Socket(name = name, extension = extension, ownerId = it.id)
+        user?.id?.let {
+            val socket = Socket(name = name, extension = extension, ownerId = it)
             socketRepository.save(socket)
             return ResponseEntity("Socket added", HttpStatus.CREATED)
         } ?: let {
