@@ -2,3 +2,5 @@
 .gradle/*
 .idea/*
 instapk.log*
+
+.idea/instapk.xml
