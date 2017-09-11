@@ -6,3 +6,4 @@ Backend for my IOT device.
 * [x] RestAPI for extension 
 * [x] Implement oauth2
 * [ ] Add google auth to the projcet
+* [ ] Implement service for save power value
