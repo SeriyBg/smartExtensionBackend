@@ -1,7 +1,7 @@
 # smartExtensionBackend
 Backend for my IOT device. 
 
-#Other part of the project
+# Other part of the project
 Link to the hardware part : https://github.com/jordan1997/SmartExtensionHardware
 
 ## Roadmap
