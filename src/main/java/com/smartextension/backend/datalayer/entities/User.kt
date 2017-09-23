@@ -15,13 +15,13 @@ class User : UserDetails {
     val id: Long? = null
 
     @Column(name = "username", nullable = false, unique = true)
-    private val username: String? = null
+    private var username: String? = null
 
     @Column(name = "password", nullable = false)
-    private val password: String? = null
+    private var password: String? = null
 
     @Column(name = "enabled", nullable = false)
-    private val enabled: Boolean = false
+    private var enabled: Boolean = false
 
     override fun getAuthorities(): Collection<GrantedAuthority> {
         return ArrayList()
@@ -51,6 +51,14 @@ class User : UserDetails {
 
     override fun getUsername(): String? {
         return username
+    }
+
+    fun setPassword(password : String) {
+        this.password = password
+    }
+
+    fun setUserName(userName : String) {
+        this.username = userName
     }
 
     companion object {
