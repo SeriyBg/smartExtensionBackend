@@ -2,11 +2,14 @@ package com.smartextension.backend
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso
+import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoRestTemplateCustomizer
 
 @SpringBootApplication
-@EnableResourceServer
+@EnableOAuth2Sso
 open class Application {
+
+    val customOauth2Template : UserInfoRestTemplateCustomizer = CustomOAuth2RestTemplate()
 
     companion object {
         @JvmStatic

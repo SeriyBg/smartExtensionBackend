@@ -31,8 +31,9 @@ open class SocketController {
     lateinit var userRepository: UserRepository
 
     @RequestMapping(method = arrayOf(RequestMethod.GET))
-    fun getAllSocket(): Collection<Socket> {
-        return ArrayList<Socket>(socketRepository.findAll().toList())
+    fun getAllSocket(): String {
+        System.out.print("fun getAllSocket(): String {")
+        return "ArrayList<Socket>(socketRepository.findAll().toList())"
     }
 
     @PostMapping
