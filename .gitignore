@@ -1,6 +1,9 @@
 
-.gradle/*
-.idea/*
+/.gradle/
+/.idea/
+buidl/
 instapk.log*
 
 .idea/instapk.xml
+build/
+out/
