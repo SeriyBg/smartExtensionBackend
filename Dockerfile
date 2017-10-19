@@ -1,10 +1,10 @@
-FROM alpine/git as clone
+FROM alpine:3.6 as project
 WORKDIR /app
-RUN git clone https://github.com/jordan1997/smartExtensionBackend.git
+COPY . /app/smartExtensionBackend
 
 FROM gradle:4.2.1-jdk8-alpine as build
 WORKDIR /app
-COPY --from=clone /app/smartExtensionBackend /app
+COPY --from=project /app/smartExtensionBackend /app
 USER root
 RUN chown -R gradle /app
 USER gradle
