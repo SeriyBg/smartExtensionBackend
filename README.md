@@ -10,4 +10,4 @@ Link to the hardware part : https://github.com/jordan1997/SmartExtensionHardware
 * [x] Implement oauth2
 * [ ] Add google auth to the projcet
 * [ ] Implement service for save power value
-* [ ] Add docker container
+* [x] Add docker container
