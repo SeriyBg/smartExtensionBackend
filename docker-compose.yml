@@ -1,0 +1,16 @@
+version: '3'
+services:
+  backend:
+    build: .
+    ports:
+      - "8083:8083"
+    depends_on:
+      - "postgres"
+    command: ["/usr/bin/java", "-jar", "BackendJava-1.0-SNAPSHOT.jar"]
+  postgres:
+    image: "postgres:latest"
+    ports:
+      - "5432:5432"
+    environment:
+     - POSTGRES_DB=springbootdb
+     - POSTGRES_USER=vova
